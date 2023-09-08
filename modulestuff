@@ -1,0 +1,30 @@
+
+export function findPath(targetX, targetY) {
+    while (currentX !== targetX || currentY !== targetY) {
+        if (currentX < targetX) {
+            // Move east
+            while (notFacingEast()) {
+                turnRight();
+            }
+            moveLog();
+        } else if (currentX > targetX) {
+            // Move west
+            while (notFacingWest()) {
+                turnRight();
+            }
+            moveLog();
+        } else if (currentY < targetY) {
+            // Move north
+            while (notFacingNorth()) {
+                turnRight();
+            }
+            moveLog();
+        } else if (currentY > targetY) {
+            // Move south
+            while (notFacingSouth()) {
+                turnRight();
+            }
+            moveLog();
+        }
+    }
+}
